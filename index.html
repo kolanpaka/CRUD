@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/bokehlicia/captiva/48/rocket-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/11bc3c9fe9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="https://gorest.co.in/rest-console" target="_blank">REST API Console</a>
+    <a href="https://gorest.co.in/public/v2/users" target="_blank">Json Data</a>
+    <div class="bg-container--nav">
+        <div class="container">
+            <div class="row nav-section">
+                <button class="btn custmor-btn" id="customerAddBtn">Add Customer</button>
+                <div class="searchContainer">
+                    <input type="text" placeholder="Search" class="searchCustomer">
+                    <i class="fa-solid fa-magnifying-glass fontawesome-icon" id="searchButton"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-container--main">
+        <div class="container">
+            <table class="display-table">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>gender</th>
+                        <th>email</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modalContainer editContainer">
+        <div class="modal">
+            <div class="wrong-mark" id="removeEditContainer">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div>
+                <div class="formsection">
+                    <label for="editname">firstName</label>
+                    <input type="text" id="editname" required>
+                </div>
+                <div class="formsection">
+                    <label for="editgender">gender</label>
+                    <input type="text" id="editgender" required>
+                </div>
+                <div class="formsection">
+                    <label for="editemail">email</label>
+                    <input type="email" id="editemail" required>
+                </div>
+                <div class="formsection">
+                    <label for="editstatus">status</label>
+                    <input type="text" id="editstatus" required>
+                </div>
+                <div class="formsection">
+                    <button class="btn cstmr-btn" id="submitEditData">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modalContainer successContainer">
+        <div class="modal">
+            <div class="sucessbox">
+                <p><i class="fa-solid fa-circle-check"></i> Task Successfully Completed</p>
+            </div>
+        </div>
+    </div>
+    <div class="modalContainer errorContainer">
+        <div class="modal">
+            <div class="sucessbox errorbox">
+                <p id="errorText"></p>
+            </div>
+        </div>
+    </div>
+    <div class="modalContainer deleteContainer">
+        <div class="modal">
+            <div class="sucessbox errorbox">
+                <p>
+                    <i class="fa-solid fa-trash-can"></i>
+                    Are You Sure You Wanna delete this?
+                    <div class="rightContainer">
+                        <button class="btn" id="cancelButton">Cancel</button>
+                        <button class="btn" id="deleteButton">Delete</button>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="modalContainer loadingOff">
+        <div class="sucessbox row spinnerContainer">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
+
+    <script src="action.js"></script>
+</body>
+</html>
